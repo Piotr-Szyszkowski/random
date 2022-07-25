@@ -1,8 +1,11 @@
-const { batman } = require("./disBeExported");
+function deepCopyObject(object) {
+  objectCopy = { ...object };
+  return objectCopy;
+}
+const firstTestObj = {
+  name: "Bruce",
+  surname: "Wayne",
+  friends: ["Robin", "Catwoman", "Wonder Woman"],
+};
 
-const testString =
-  "Stranger things is about Vcna guy this time, who is a wizard.";
-const findVecna = new RegExp("Vecna");
-const vecnaIsHere = findVecna.test(testString);
-
-console.log(batman);
+console.log(deepCopyObject(firstTestObj));
