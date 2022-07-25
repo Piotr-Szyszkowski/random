@@ -26,13 +26,19 @@ describe("Deep copy object", () => {
       ],
     };
     firstResultObject = deepCopyObject(firstTestObj);
-    firstResultObject.name = "Clark";
-    expect(firstTestObj.name).toBe("Bruce");
+    firstResultObject.friends[0].names.push("Tim Drake");
+    expect(firstTestObj.friends[0].names).toEqual([
+      "Jason Todd",
+      "Dick Grayson",
+    ]);
     expect(firstResultObject).toEqual({
-      name: "Clark",
+      name: "Bruce",
       surname: "Wayne",
       friends: [
-        { codename: "Robin", names: ["Jason Todd", "Dick Grayson"] },
+        {
+          codename: "Robin",
+          names: ["Jason Todd", "Dick Grayson", "Tim Drake"],
+        },
         "Catwoman",
         "Wonder Woman",
       ],

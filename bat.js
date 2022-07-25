@@ -8,4 +8,10 @@ const firstTestObj = {
   friends: ["Robin", "Catwoman", "Wonder Woman"],
 };
 
-console.log(deepCopyObject(firstTestObj));
+const secondTestObj = deepCopyObject(firstTestObj);
+
+console.log(firstTestObj);
+console.log(secondTestObj);
+secondTestObj.friends.push("me");
+console.log(firstTestObj);
+console.log(secondTestObj);

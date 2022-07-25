@@ -1,5 +1,5 @@
 function deepCopyObject(object) {
-  objectCopy = { ...object };
+  objectCopy = JSON.parse(JSON.stringify(object));
   return objectCopy;
 }
 
